@@ -1,3 +1,25 @@
+import random
+import math 
+
+def wallis(n):
+    prod=1
+    for i in range (1,n+1):
+        val=(4.0)*((i)**2)/((4.0)*(i**2)-1)
+        prod = prod*val
+    ans=2*prod
+    return ans
+
+def monte_carlo(n):
+    m=0
+    for i in range (0,n):
+        x=random.uniform(-1,1)
+        y=random.uniform(-1,1)
+        dist= (x**2)+(y**2) #assume centreof circle is (0,0)
+        if dist<=1:
+            m=m+1
+    r= 4*(float(m)/float(n))
+    return r
+
 import math
 import unittest
 
